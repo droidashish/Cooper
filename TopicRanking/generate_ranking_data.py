@@ -10,13 +10,13 @@ parser.add_argument("--skip_exist", type=bool, default=False, help="whether to s
 args = parser.parse_args()
 dataset_type = args.dataset_type
 
-cluster_info_file = f"data/{dataset_type}/cluster_info.json"
+cluster_info_file = f"data/{dataset_type}/{dataset_type}/cluster_info.json"
 
 K_REMAIN = 3
 speaker_sep_token = " "
-data_dir = f"../data/{dataset_type}/api_annotated_w_ranking/"
-cluster_info_dir = f"./data/{dataset_type}/"
-output_dir = f"./data/{dataset_type}/"
+data_dir = f"./data/{dataset_type}/{dataset_type}/api_annotated_w_ranking/"
+cluster_info_dir = f"./data/{dataset_type}/{dataset_type}/"
+output_dir = f"./data/{dataset_type}/{dataset_type}/"
 
 if dataset_type=="P4G":
     state_keys = ["inquiry_state", "appeal_state", "proposition_state"]

@@ -42,9 +42,9 @@ class BertForTopicRanking_four_gat(BertPreTrainedModel):
         self.init_weights()
         # state_name = ['exploration_state','comfort_state','action_state']
         self.cluster_embedding =[
-            torch.Tensor(np.load('data/esconv/exploration_state_centers.npy')),
-            torch.Tensor(np.load('data/esconv/comfort_state_centers.npy')),
-            torch.Tensor(np.load('data/esconv/action_state_centers.npy'))
+            torch.Tensor(np.load('data/esconv/esconv/exploration_state_centers.npy')),
+            torch.Tensor(np.load('data/esconv/esconv/comfort_state_centers.npy')),
+            torch.Tensor(np.load('data/esconv/esconv/action_state_centers.npy'))
             ]
         self.gat_layer = nn.ModuleList([SimpleGatLayer(config.hidden_size),SimpleGatLayer(config.hidden_size),SimpleGatLayer(config.hidden_size)])
         self.gat_layer2 = SimpleGatLayer(config.hidden_size)

@@ -14,8 +14,8 @@ parser.add_argument("--search_best_cluster_num", type=bool, default=True, help="
 args = parser.parse_args()
 dataset_type = args.dataset_type
 
-data_dir = f"../data/{dataset_type}/api_annotated_w_ranking/"
-output_dir = f"./data/{dataset_type}/"
+data_dir = f"./data/{dataset_type}/{dataset_type}/api_annotated_w_ranking/"
+output_dir = f"./data/{dataset_type}/{dataset_type}/"
 if os.path.exists(output_dir) is False:
     os.mkdir(output_dir)
 training_data_file = os.path.join(data_dir, "train.json")
